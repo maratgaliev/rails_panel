@@ -19,6 +19,10 @@ module MetaRequest
       Rails.logger.extend(LogInterceptor) if Rails.logger
     end
 
+    initializer 'meta_request.log_reader' do
+      Rails.logger.extend(LogReader)
+    end
+
     initializer 'meta_request.subscribe_to_notifications' do
       AppNotifications.subscribe
     end

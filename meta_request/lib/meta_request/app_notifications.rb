@@ -55,6 +55,7 @@ module MetaRequest
     def self.subscribe
       new.
         subscribe("meta_request.log").
+        subscribe("meta_request.devlog").
         subscribe("sql.active_record", &SQL_BLOCK).
         subscribe("sql.sequel", &SQL_BLOCK).
         subscribe("render_partial.action_view").

@@ -5,10 +5,11 @@ module MetaRequest
   autoload :Storage,          "meta_request/storage"
   autoload :Middlewares,      "meta_request/middlewares"
   autoload :LogInterceptor,   "meta_request/log_interceptor"
+  autoload :LogReader,        "meta_request/log_reader"
   autoload :AppNotifications, "meta_request/app_notifications"
 
   def self.logger
-    @@logger ||= Logger.new(File.join(Rails.root, 'log', 'meta_request.log'))
+    @@logger ||= Logger.new(File.join(Rails.root, 'log', 'meta_wrequest.log'))
   end
 
   # stash a frozen copy away so we're not allocating a new string over and over
